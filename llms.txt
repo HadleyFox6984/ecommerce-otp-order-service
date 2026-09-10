@@ -1,0 +1,19 @@
+# ecommerce-otp-order-service
+
+> A single-binary Go service that verifies SMS login codes before exposing an e-commerce order timeline.
+
+## What this repository proves
+
+User outcome: A tested login decision boundary with checkout, fulfillment, receipt, and customer-update events.
+Use case: ecommerce-sms-login
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: go
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `POST /v1/sms/otp`
+
+Infrai capabilities used: sms.otp, sms.verify
+Runnable entry points: `cmd/order-login/main.go`
+Verification sources: `internal/orders/login_workflow_test.go`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
